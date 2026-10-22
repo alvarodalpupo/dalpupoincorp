@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Dalpupo Incorporadora: casas prontas para morar em Cascavel, PR. Conheça as Casas Vereadas.">
+<title>Dalpupo Incorporadora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Identidade Dalpupo (logo 3 refinado): petróleo, ocre, areia, concreto; Archivo ExtraBold nos títulos, Inter no texto. Layout em faixas largas. */
+:root{
+  --bg:#F4F2EE; --surface:#FBFAF7; --ink:#12343B; --muted:#5B6B78; --line:#D9D4CB;
+  --primary:#12343B; --on-primary:#F4F2EE; --ochre:#C9932E; --on-ochre:#12343B;
+  --band-bg:#12343B; --band-ink:#F4F2EE;
+  --f-display:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --f-body:'Inter','Helvetica Neue',Arial,sans-serif;
+  --f-mono:'Inter','Helvetica Neue',Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B2127; --surface:#12343B; --ink:#F4F2EE; --muted:#A9B6BE; --line:#2C4A52;
+  --primary:#C9932E; --on-primary:#12343B; --band-bg:#12343B; --band-ink:#F4F2EE; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B2127; --surface:#12343B; --ink:#F4F2EE; --muted:#A9B6BE; --line:#2C4A52;
+  --primary:#C9932E; --on-primary:#12343B; --band-bg:#12343B; --band-ink:#F4F2EE; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;padding-inline:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+.wrap{width:100%;max-width:1120px;margin-inline:auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--f-display);font-weight:800;line-height:1.05;text-wrap:balance;margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.logo{--s:30px;display:inline-flex;flex-direction:column;align-items:stretch;gap:calc(var(--s)*.19);color:var(--ink);font-family:var(--f-display);text-decoration:none}
+.logo .top{display:flex;align-items:flex-end;font-size:var(--s);font-weight:800;line-height:.72;letter-spacing:.01em}
+.logo svg{width:.875em;height:.833em;overflow:visible;margin:0 .02em .02em;display:block}
+.logo .sub{display:flex;justify-content:space-between;font-size:calc(var(--s)*.2);font-weight:500;line-height:1}
+nav{display:flex;gap:22px;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:.95rem;font-weight:500;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{padding-block:56px 40px}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;letter-spacing:-.025em}
+.hero h1 em{font-style:normal;text-decoration:underline;text-decoration-color:var(--ochre);text-decoration-thickness:.09em;text-underline-offset:.1em}
+.lead{font-size:1.15rem;color:var(--muted);max-width:34em;margin:22px 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 22px;border-radius:4px;font-weight:600;text-decoration:none;font-size:1rem;border:2px solid var(--primary)}
+.btn.primary{background:var(--primary);color:var(--on-primary)}
+.btn.ghost{color:var(--primary)}
+.btn:hover{filter:brightness(1.08)}
+
+.hero-fig{margin:0;min-width:0}
+.hero-fig img{width:100%;height:auto;display:block;border:1px solid var(--ink)}
+.hero-fig figcaption{font-family:var(--f-mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.pic img#main{width:100%;height:auto;display:block}
+.thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}
+.thumbs button{padding:0;border:2px solid transparent;background:none;cursor:pointer;min-width:0;opacity:.7}
+.thumbs button[aria-pressed="true"]{border-color:var(--ochre);opacity:1}
+.thumbs button img{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover}
+.planta{display:grid;grid-template-columns:1.5fr 1fr;gap:36px;align-items:start}
+.planta img{width:100%;height:auto;display:block;border:1px solid var(--ink);background:#fff}
+.rooms{margin:0}
+.rooms .row dd{white-space:nowrap}
+.rooms .total{border-top:2px solid var(--ink);font-weight:600}
+/* strip of facts */
+.facts{border-block:1px solid var(--line);background:var(--surface)}
+.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.fact{padding:26px 20px 26px 0;border-right:1px solid var(--line);padding-left:20px;min-width:0}
+.fact:first-child{padding-left:0}
+.fact:last-child{border-right:0}
+.fact b{display:block;font-family:var(--f-display);font-size:2rem;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.fact span{font-family:var(--f-mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+section{padding-block:80px}
+.sec-head{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;margin-bottom:44px;align-items:end}
+.sec-head h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:800;letter-spacing:-.02em}
+.sec-head p{margin:0;color:var(--muted);max-width:36em}
+
+/* project */
+.project{display:grid;grid-template-columns:1.25fr 1fr;gap:0;border:1px solid var(--ink);background:var(--surface)}
+.project .pic{padding:20px;border-right:1px solid var(--ink);min-width:0}
+.project .info{padding:32px;min-width:0}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;background:var(--ochre);color:var(--on-ochre);border-radius:2px;margin-bottom:16px}
+.project h3{font-size:2rem;font-weight:700;letter-spacing:-.015em;margin-bottom:6px}
+.addr{color:var(--muted);margin:0 0 24px}
+dl{margin:0}
+.row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px dashed var(--line)}
+.row dt{color:var(--muted)}
+.row dd{margin:0;font-family:var(--f-mono);font-weight:500;text-align:right;font-variant-numeric:tabular-nums}
+.price{margin-top:22px;padding-top:18px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.price small{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.price strong{font-family:var(--f-display);font-size:2rem;font-weight:800;letter-spacing:-.02em}
+
+/* values */
+.vals{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.val{border-top:3px solid var(--primary);padding-top:18px;min-width:0}
+.val h3{font-size:1.35rem;font-weight:700;margin-bottom:10px}
+.val p{margin:0;color:var(--muted)}
+
+/* about */
+.about{background:var(--band-bg);color:var(--band-ink)}
+.about .eyebrow{color:inherit;opacity:.8}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+.about h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:800;letter-spacing:-.02em}
+.about p{margin:0 0 16px;font-size:1.08rem}
+.quote{border-left:3px solid var(--ochre);padding-left:20px;font-family:var(--f-display);font-size:1.35rem;line-height:1.3;font-weight:500}
+
+/* contact */
+.contact-box{border:1px solid var(--ink);background:var(--surface);padding:36px;display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center}
+.contact-box h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+.contact-box p{margin:0;color:var(--muted)}
+.contact-actions{display:flex;flex-direction:column;gap:12px;min-width:0}
+.contact-actions .btn{text-align:center}
+.num{font-family:var(--f-mono);font-size:.95rem;color:var(--muted);text-align:center;overflow-wrap:anywhere}
+
+footer{border-top:1px solid var(--line);padding-block:30px 40px;color:var(--muted);font-size:.9rem}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .hero-grid,.sec-head,.project,.about-grid,.contact-box{grid-template-columns:1fr}
+  .project .pic{border-right:0;border-bottom:1px solid var(--ink)}
+  .facts-grid{grid-template-columns:1fr 1fr}
+  .fact{border-right:0;padding-left:0;border-bottom:1px solid var(--line)}
+  .fact:nth-last-child(-n+2){border-bottom:0}
+  .vals,.planta{grid-template-columns:1fr}
+  section{padding-block:56px}
+  .sec-head{gap:14px;margin-bottom:28px}
+  .project .info,.contact-box{padding:24px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#topo" aria-label="Dalpupo Incorporadora, início"><span class="top"><span>D</span><svg viewBox="0 0 80 76" aria-hidden="true"><polyline points="5,76 40,6 75,76" fill="none" stroke="currentColor" stroke-width="15" stroke-linejoin="miter" stroke-miterlimit="10"/><rect x="33" y="46" width="14" height="14" fill="#C9932E"/></svg><span>LPUPO</span></span><span class="sub" aria-hidden="true"><span>I</span><span>N</span><span>C</span><span>O</span><span>R</span><span>P</span><span>O</span><span>R</span><span>A</span><span>D</span><span>O</span><span>R</span><span>A</span></span></a>
+    <nav aria-label="Seções">
+      <a href="#obra">Casas Vereadas</a>
+      <a href="#jeito">Nosso jeito</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+  <div class="wrap hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Incorporadora · Cascavel, PR</p>
+        <h1>Casas prontas para <em>morar</em>, com a obra acompanhada de perto.</h1>
+        <p class="lead">A Dalpupo constrói em Cascavel e cuida de cada etapa, da fundação à entrega das chaves. Você sabe o que está sendo feito e quanto custa.</p>
+        <div class="cta">
+          <a class="btn primary" href="#obra">Ver as Casas Vereadas</a>
+          <a class="btn ghost" href="#contato">Falar com a Dalpupo</a>
+        </div>
+      </div>
+      <figure class="hero-fig">
+        <img src="img/fachada.jpg" width="1280" height="720" alt="Projeto 3D da fachada das duas casas Casas Vereadas, vista de frente da rua">
+        <figcaption>Casas Vereadas · projeto 3D</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="wrap facts-grid">
+      <div class="fact"><b>2</b><span>casas no empreendimento</span></div>
+      <div class="fact"><b>72,41 m²</b><span>por unidade</span></div>
+      <div class="fact"><b>3 quartos</b><span>1 suíte · 2 vagas</span></div>
+      <div class="fact"><b>6 × 30 m</b><span>terreno de cada casa</span></div>
+    </div>
+  </div>
+
+  <section id="obra">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Casas Vereadas</h2>
+        <p>Duas casas lado a lado no Jardim Vereadas, em Cascavel, com três dormitórios e garagem para dois carros. A obra está em andamento e cada unidade é vendida separadamente.</p>
+      </div>
+      <article class="project">
+        <div class="pic">
+          <img id="main" src="img/esquina.jpg" width="1280" height="720" alt="Projeto 3D das Casas Vereadas, vista em perspectiva">
+          <div class="thumbs" role="group" aria-label="Escolher imagem">
+            <button type="button" data-src="img/esquina.jpg" data-alt="Projeto 3D das Casas Vereadas, vista em perspectiva" aria-pressed="true"><img src="img/esquina.jpg" alt="" loading="lazy"></button>
+            <button type="button" data-src="img/lateral.jpg" data-alt="Projeto 3D, vista lateral das duas casas" aria-pressed="false"><img src="img/lateral.jpg" alt="" loading="lazy"></button>
+            <button type="button" data-src="img/portao.jpg" data-alt="Projeto 3D com portões de entrada" aria-pressed="false"><img src="img/portao.jpg" alt="" loading="lazy"></button>
+            <button type="button" data-src="img/aerea.jpg" data-alt="Vista aérea das coberturas e do terreno" aria-pressed="false"><img src="img/aerea.jpg" alt="" loading="lazy"></button>
+            <button type="button" data-src="img/fundos.jpg" data-alt="Vista dos fundos com os quintais" aria-pressed="false"><img src="img/fundos.jpg" alt="" loading="lazy"></button>
+          </div>
+        </div>
+        <div class="info">
+          <span class="tag">Em andamento</span>
+          <h3>Casas Vereadas</h3>
+          <p class="addr">Rua Sagarana, 1282 · Jardim Vereadas · Cascavel/PR</p>
+          <dl>
+            <div class="row"><dt>Unidades</dt><dd>2 casas</dd></div>
+            <div class="row"><dt>Área por unidade</dt><dd>72,41 m²</dd></div>
+            <div class="row"><dt>Área total construída</dt><dd>144,82 m²</dd></div>
+            <div class="row"><dt>Dormitórios</dt><dd>3 (1 suíte)</dd></div>
+            <div class="row"><dt>Vagas de garagem</dt><dd>2</dd></div>
+            <div class="row"><dt>Terreno por casa</dt><dd>180 m² (6 × 30 m)</dd></div>
+            <div class="row"><dt>Início da obra</dt><dd>Jan/2026</dd></div>
+            <div class="row"><dt>Situação</dt><dd>Em construção</dd></div>
+          </dl>
+          <div class="price"><small>Valor por unidade</small><strong>R$ 450.000</strong></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="planta" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Planta de cada casa</h2>
+        <p>Sala e cozinha na frente, dormitórios no fundo e uma suíte de 12,79 m². Áreas de cada ambiente conforme o projeto.</p>
+      </div>
+      <div class="planta">
+        <img src="img/planta.jpg" width="1280" height="720" alt="Planta baixa humanizada de uma das casas, com sala, cozinha, dois dormitórios, suíte, banheiros e duas vagas de garagem" loading="lazy">
+        <dl class="rooms">
+          <div class="row"><dt>Sala TV / jantar</dt><dd>15,84 m²</dd></div>
+          <div class="row"><dt>Cozinha</dt><dd>7,12 m²</dd></div>
+          <div class="row"><dt>Circulação</dt><dd>5,24 m²</dd></div>
+          <div class="row"><dt>Dormitório 1</dt><dd>6,11 m²</dd></div>
+          <div class="row"><dt>Dormitório 2</dt><dd>6,72 m²</dd></div>
+          <div class="row"><dt>Suíte</dt><dd>12,79 m²</dd></div>
+          <div class="row"><dt>Banheiro (cada)</dt><dd>3,36 m²</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="jeito" style="background:var(--surface);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Como a Dalpupo trabalha</h2>
+        <p>Uma incorporadora pequena de propósito. O mesmo responsável acompanha a obra do começo ao fim.</p>
+      </div>
+      <div class="vals">
+        <div class="val"><h3>Obra acompanhada</h3><p>Visitas frequentes ao canteiro e registro de cada etapa, para que nada fique para depois da entrega.</p></div>
+        <div class="val"><h3>Pronta para morar</h3><p>A casa é entregue concluída, para você se mudar sem obra pendente.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="sobre">
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow">Sobre a Dalpupo</p>
+        <h2>Construímos em Cascavel, para quem vive em Cascavel.</h2>
+      </div>
+      <div>
+        <p>A Dalpupo Incorporadora é conduzida por Alvaro Dalpupo e atua na construção e venda de casas residenciais na cidade.</p>
+        <p class="quote">Entregar casas prontas para morar, com acompanhamento de perto em cada etapa da obra.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap">
+      <div class="contact-box">
+        <div>
+          <p class="eyebrow">Contato</p>
+          <h2>Quer conhecer as Casas Vereadas?</h2>
+          <p>Fale com o Junior ou com o Alvaro para receber detalhes das unidades, combinar uma visita ao terreno e tirar dúvidas sobre a compra.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn primary" id="wa1" target="_blank" rel="noopener" href="https://wa.me/5545999524094?text=Ol%C3%A1%20Junior!%20Vi%20o%20site%20da%20Dalpupo%20e%20quero%20saber%20mais%20sobre%20as%20Casas%20Vereadas.">WhatsApp · Junior</a>
+          <div class="num">(45) 99952-4094</div>
+          <a class="btn primary" id="wa2" target="_blank" rel="noopener" href="https://wa.me/5545984069496?text=Ol%C3%A1%20Alvaro!%20Vi%20o%20site%20da%20Dalpupo%20e%20quero%20saber%20mais%20sobre%20as%20Casas%20Vereadas.">WhatsApp · Alvaro</a>
+          <div class="num">(45) 98406-9496</div>
+          <a class="btn ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rua+Sagarana+1282+Jardim+Vereadas+Cascavel+PR">Ver no mapa</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Dalpupo Incorporadora · Cascavel, Paraná</span>
+    <span>Imagens ilustrativas. Valores e condições sujeitos a confirmação.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var main=document.getElementById('main');
+  var bs=document.querySelectorAll('.thumbs button');
+  bs.forEach(function(b){b.addEventListener('click',function(){
+    main.src=b.dataset.src; main.alt=b.dataset.alt;
+    bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+  })});
+})();
+</script>
+
+</body>
+</html>
